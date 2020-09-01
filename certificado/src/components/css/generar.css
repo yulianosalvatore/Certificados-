@@ -1,12 +1,4 @@
-.container{
-	margin-left: 200px;
-    min-height: 100%;
-}
-.input{
-	margin-left: 150px;
-	min-height: 30px;
-	min-width: 700px;
-}
+
 
 body{
     background-image: url("../img/fondocarousel.png");
@@ -14,7 +6,7 @@ body{
 }
 
 .panel-body{
-	background-image: url("../img/fondocarousel.png");
+    background-image: url("../img/fondocarousel.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -23,9 +15,8 @@ body{
 	position: absolute;
 	background-image: url("../img/bannermobile.png");
 	background-size: cover;
-	background-repeat: no-repeat;
-	margin-top: -15px;
-	margin-left: -115px;
+	margin-bottom: 0px;
+	margin-left: -108px;
 	width: 98%;
 }
 
@@ -65,12 +56,9 @@ h2{
 	margin: auto;
 }
 
-.btnEnviar{
-	background-color: #0079c2;
-	margin-left: 365px;
-	padding: 4px;
-	border-radius: 10px;
-	width: 300px;
+#btnEnviar{
+    background-color: #0079c2;
+	margin: 25px 0px;
 }
 
 .checkboxContainer .form-control-feedback{
@@ -92,13 +80,16 @@ h2{
 }
 
 #formEditar{
-	display: none;
+    display: flexbox;
+    text-align-last: left;
 }
+
 .from1{
-	margin-top: 130px;
-    /* padding-left: 280px; */
+	margin-top: 100px;
+    padding-left: 280px;
     margin-left: 10px;
 }
+
 
 
 

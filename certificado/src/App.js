@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import Crud1 from './components/js/dasboart';
+import DASH from './components/js/dashboart';
 
 function App() {
   return (
     <div className="App"> 
-    <Crud1 />
+    <DASH />
 </div>
 );
 }
