@@ -38,8 +38,10 @@ class DASH extends React.Component {
                         <div className="container">
                             <div className="text-center">
                                 <div className="from1">
+                                    <div className ="titulo">
                                     <h2>Eventos Esri Colombia</h2>
                                     <h3>Generación de certificados</h3>
+                                    </div>
                                     {/* Formulario de busqueda de registro por evento y correo */}
 
                                     <form className="form-horizontal" id="formConsulta" action="" //logica/controlador/ctrlBusqueda.php
@@ -74,14 +76,14 @@ class DASH extends React.Component {
                                                     <span className="input-group-addon">
                                                         <i className="glyphicon glyphicon-user"></i>
                                                     </span>
-                                                    <input type="text" className="input" name="Correo" id="Correo" placeholder="Correo"></input>
+                                                    <input type="text"   className="input" name="Correo" id="Correo" placeholder="Correo"></input>
                                                 </div>
                                             </div>
                                         </div>
                                         <div className="form-group">
                                             <label className="col-sm-4 control-label"></label>
                                             <div className="col-sm-4">
-                                                <button type="submit" className="btnEnviar" id="btnEnviar">Consultar&nbsp;<i
+                                                <button type="submit" className="Enviar" id="Enviar">Consultar&nbsp;<i
                                                     class="glyphicon glyphicon-send"></i></button>
                                             </div>
                                         </div>
