@@ -1,7 +1,9 @@
 Front (certificado):
-npm install
-npm install react
+  npm install
+  npm i react react-router-dom
+En caso de error: 
+  npm i react-scripts
 
 back (certificados):
-npm install
-npm install express body-parser pg knex dotenv helmet cors morgan
+  npm install
+  npm i express body-parser pg knex dotenv helmet cors morgan

@@ -45,11 +45,11 @@ app.use(morgan('combined')) // use 'tiny' o 'combined'
 
 // App Routes - Auth
 app.get('/', (req, res) => res.send('hello world'))
-app.get('/crud', (req, res) => main.getTableData(req, res, db))
-app.post('/search/', (req, res) => main.getData(req, res, db))
-app.post('/crud', (req, res) => main.postTableData(req, res, db))
-app.put('/crud', (req, res) => main.putTableData(req, res, db))
-app.delete('/crud', (req, res) => main.deleteTableData(req, res, db))
+app.get('/users', (req, res) => main.getTableData(req, res, db))
+app.post('/Select/', (req, res) => main.getData(req, res, db))
+app.post('/user', (req, res) => main.postTableData(req, res, db))
+app.put('/user', (req, res) => main.putTableData(req, res, db))
+app.delete('/user', (req, res) => main.deleteTableData(req, res, db))
 
 // App Server Connection
 app.listen(process.env.PORT || 4000, () => {

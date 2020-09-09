@@ -1,12 +1,33 @@
 
 .input{
+	
 	background: #efeff1 !important ;
 	border-radius: 0px !important;
 	margin-left: 100px;
 	min-height: 30px;
 	min-width: 700px;
 }
-
+.icons{
+	width: 13%;
+}
+.input2{
+	z-index:5;
+	background: #efeff1;
+	border-radius: 0px ;
+	/* margin-left: 100px; */
+	/* min-height: 30px; */
+	min-width: 100%;
+	font-size: 1em;
+    color: #212121;
+    /* margin: 6px 0 3px 0; */
+    /* border: 1px; */
+    /* padding: 10px 8px; */
+    outline: none;
+    text-decoration: none;
+}
+.left{
+	text-align-last: left;
+}
 
 body{
     background-image: url("../img/fondocarousel.png");
