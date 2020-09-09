@@ -64,8 +64,10 @@ headers:{
                         <div className="container">
                             <div className="text-center">
                                 <div className="from1">
+                                    <div className ="titulo">
                                     <h2>Eventos Esri Colombia</h2>
                                     <h3>Generación de certificados</h3>
+                                    </div>
                                     {/* Formulario de busqueda de registro por evento y correo */}
 
                                     <form onSubmit={this.handle} className="form-horizontal" id="formConsulta" action="" //logica/controlador/ctrlBusqueda.php
@@ -100,14 +102,14 @@ headers:{
                                                     <span className="input-group-addon">
                                                         <i className="glyphicon glyphicon-user"></i>
                                                     </span>
-                                                    <input type="text" className="input" ref={this.Email} name="Correo" id="Correo" placeholder="Correo"></input>
+                                                    <input type="text" ref={this.Email}  className="input" name="Correo" id="Correo" placeholder="Correo"></input>
                                                 </div>
                                             </div>
                                         </div>
                                         <div className="form-group">
                                             <label className="col-sm-4 control-label"></label>
                                             <div className="col-sm-4">
-                                                <button type="submit" className="btnEnviar" id="btnEnviar">Consultar&nbsp;<i
+                                                <button type="submit" className="Enviar" id="Enviar">Consultar&nbsp;<i
                                                     class="glyphicon glyphicon-send"></i></button>
                                             </div>
                                         </div>

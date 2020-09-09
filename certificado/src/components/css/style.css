@@ -1,12 +1,12 @@
-.container{
-	margin-left: 200px;
-    min-height: 100%;
-}
+
 .input{
-	margin-left: 150px;
+	background: #efeff1 !important ;
+	border-radius: 0px !important;
+	margin-left: 100px;
 	min-height: 30px;
 	min-width: 700px;
 }
+
 
 body{
     background-image: url("../img/fondocarousel.png");
@@ -21,12 +21,12 @@ body{
 
 .jumbotron{
 	position: absolute;
-	background-image: url("../img/bannermobile.png");
+	background-image: url("../img/banner6.png");
 	background-size: cover;
 	background-repeat: no-repeat;
 	margin-top: -15px;
 	margin-left: -115px;
-	width: 98%;
+	max-width: 98%;
 }
 
 #content{
@@ -65,11 +65,11 @@ h2{
 	margin: auto;
 }
 
-.btnEnviar{
+.Enviar{
 	background-color: #0079c2;
-	margin-left: 365px;
+	color: antiquewhite;
+	margin-left: 200px;
 	padding: 4px;
-	border-radius: 10px;
 	width: 300px;
 }
 
@@ -93,12 +93,15 @@ h2{
 
 #formEditar{
 	display: none;
+	
 }
 .from1{
-	margin-top: 130px;
-    /* padding-left: 280px; */
-    margin-left: 10px;
+	margin-top: 150px;
+	padding-left: 160px;
 }
 
+.titulo{
+	margin-left: -170px;
+}
 
 

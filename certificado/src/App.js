@@ -1,19 +1,23 @@
 import React, { Component } from 'react'
 import './App.css';
-import DASH from './components/js/dashboart';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-class App extends Component {
-  
-  render() {
-    return (
-    <div className="App"> 
-    <DASH/>
-</div>
-)};
+import Generar from './components/js/generarpdf'
+import DASH from './components/js/dashboart'
+import Crud from './components/js/crud'
+
+
+function App() {
+  return (
+    <Router>
+      <Switch>
+        <Route path="/" exact component={DASH} />
+        <Route path="/crud" exact component={Crud} />
+        <Route path="/generarpdf" exact component={Generar} />
+        
+      </Switch>
+    </Router>
+  );
 }
 
-
 export default App;
-
-
-
