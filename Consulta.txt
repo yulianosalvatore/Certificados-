@@ -1,0 +1,19 @@
+
+app.js
+state = {
+    items: []
+  }
+getItems(){
+    fetch('http://localhost:3000/crud')
+      .then(response => response.json())
+      .then(items => this.setState({items}))
+      .catch(err => console.log(err))
+  }
+
+<DASH items={this.state.items} />
+
+dashboard.js
+render() {
+        const items = this.props.items
+        return (
+{items.map(items => <div>{items.email}</div>)}

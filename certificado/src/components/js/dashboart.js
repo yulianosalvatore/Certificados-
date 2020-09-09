@@ -6,19 +6,45 @@ import { Container } from 'reactstrap';
 
 class DASH extends React.Component {
 
-    handlechange = e => {
-        this.setState({
-            from: {
-                ...this.state.from,
-                [e.target.name]: e.target.value,
-            }
-        })
-    }
+    // handlechange = e => {
+    //     this.setState({
+    //         from: {
+    //             ...this.state.from,
+    //             [e.target.name]: e.target.value,
+    //         }
+    //     })
+    // }
+    Email = React.createRef();
+    
+    handle = (e)=>{
+        e.preventDefault();
+        const email=this.Email.current.value
+        const valor= {}
+        // alert(this.Email.current.value)
+
+var raw = JSON.stringify({"email":email});
+
+fetch("http://localhost:4000/search", {method: 'post',body: raw,
+headers:{
+  'Content-Type': 'application/json'
+}})
+    .then(response => response.json())
+      .then(res => {
+        if(res[0]){
+            alert("SI se encuentra registrado el correo")
+        }else{
+            alert("NO se encuentra registrado el correo")
+        }})
+      .catch(err => console.log(err))
+      
+
+}
 
     render() {
         return (
             <>
                 <Container >
+                
                     <br />
                         {/*  
                      <div className="load">
@@ -42,7 +68,7 @@ class DASH extends React.Component {
                                     <h3>Generación de certificados</h3>
                                     {/* Formulario de busqueda de registro por evento y correo */}
 
-                                    <form className="form-horizontal" id="formConsulta" action="" //logica/controlador/ctrlBusqueda.php
+                                    <form onSubmit={this.handle} className="form-horizontal" id="formConsulta" action="" //logica/controlador/ctrlBusqueda.php
                                         method="post" enctype="url-encoded" autocomplete="on">
                                         <div className="form-group">
                                             <label className="control-label col-sm-2" for="Evento">Evento*</label>
@@ -74,7 +100,7 @@ class DASH extends React.Component {
                                                     <span className="input-group-addon">
                                                         <i className="glyphicon glyphicon-user"></i>
                                                     </span>
-                                                    <input type="text" className="input" name="Correo" id="Correo" placeholder="Correo"></input>
+                                                    <input type="text" className="input" ref={this.Email} name="Correo" id="Correo" placeholder="Correo"></input>
                                                 </div>
                                             </div>
                                         </div>

@@ -1,4 +1,5 @@
 const express = require('express')
+const { Pool } = require('pg');
 
 // use las variables de process.env para mantener las variables privadas,
 require('dotenv').config()
@@ -11,24 +12,23 @@ const morgan = require('morgan') // solicitudes de registros
 
 
 // db Connection w/ localhost
-var db = require('knex')({
-  client: 'pg',
-  connection: {
-    host : 'localhost',
-    user : 'postgres',
-    password : 'a12112001',
-    database : 'mercadeonosa'
-  }
-});
+const config = ({
+  host:'localhost',
+  user:'postgres',
+  //password:'yuliano08',
+  password:'a12112001',
+  database:'mercadeonosa'
+})
+const db = new Pool(config);
 
 // Controllers - aka, las consultas a db 
-const main = require('./controllers/main')
+const main = require('./src/controllers/main')
 
 // App
 const app = express()
 
-// App Middleware
-const whitelist = ['http://localhost:3001']
+// App Middleware, direcciones que estan permitidas a consultar el back
+const whitelist = ['http://localhost:3000']
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
@@ -46,11 +46,12 @@ app.use(morgan('combined')) // use 'tiny' o 'combined'
 // App Routes - Auth
 app.get('/', (req, res) => res.send('hello world'))
 app.get('/crud', (req, res) => main.getTableData(req, res, db))
+app.post('/search/', (req, res) => main.getData(req, res, db))
 app.post('/crud', (req, res) => main.postTableData(req, res, db))
 app.put('/crud', (req, res) => main.putTableData(req, res, db))
 app.delete('/crud', (req, res) => main.deleteTableData(req, res, db))
 
 // App Server Connection
-app.listen(process.env.PORT || 3000, () => {
-  console.log(`app is running on port ${process.env.PORT || 3000}`)
+app.listen(process.env.PORT || 4000, () => {
+  console.log(`app is running on port ${process.env.PORT || 4000}`)
 })

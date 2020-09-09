@@ -1,0 +1,7 @@
+Front (certificado):
+npm install
+npm install react
+
+back (certificados):
+npm install
+npm install express body-parser pg knex dotenv helmet cors morgan

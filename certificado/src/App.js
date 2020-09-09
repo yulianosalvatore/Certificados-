@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react'
 import './App.css';
 import DASH from './components/js/dashboart';
 
-function App() {
-  return (
+class App extends Component {
+  
+  render() {
+    return (
     <div className="App"> 
-    <DASH />
+    <DASH/>
 </div>
-);
+)};
 }
 
 
