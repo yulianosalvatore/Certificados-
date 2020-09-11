@@ -15,8 +15,8 @@ const morgan = require('morgan') // solicitudes de registros
 const config = ({
   host:'localhost',
   user:'postgres',
-  password:'yuliano08',
-  // password:'a12112001',
+  // password:'yuliano08',
+  password:'a12112001',
   database:'mercadeonosa'
 })
 const db = new Pool(config);
@@ -46,10 +46,11 @@ app.use(morgan('combined')) // use 'tiny' o 'combined'
 // App Routes - Auth
 app.get('/', (req, res) => res.send('hello world'))
 app.get('/users', (req, res) => main.getUsers(req, res, db))
+app.get('/user', (req, res) => main.getUsersById(req, res, db))
 app.post('/Select/', (req, res) => main.getData(req, res, db))
 app.post('/user', (req, res) => main.createUser(req, res, db))
-app.put('/user/:id', (req, res) => main.updateUser(req, res, db))
-app.delete('/user/:id', (req, res) => main.deleteUser(req, res, db))
+app.put('/user', (req, res) => main.updateUser(req, res, db))
+app.delete('/user', (req, res) => main.deleteUser(req, res, db))
 
 // App Server Connection
 app.listen(process.env.PORT || 4000, () => {

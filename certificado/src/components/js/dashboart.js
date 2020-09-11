@@ -4,6 +4,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Container } from "reactstrap";
 
 class DASH extends React.Component {
+  state = {
+    res: []
+  }
   // handlechange = e => {
   //     this.setState({
   //         from: {
@@ -32,7 +35,13 @@ class DASH extends React.Component {
       .then((response) => response.json())
       .then((res) => {
         if (res[0]) {
-          this.props.history.push('/imprimir');
+          // this.setState({res})
+          // alert(this.state.res)
+          // this.props.history.push('/imprimir');
+          this.props.history.push({
+            pathname: '/imprimir',
+            state: { detail: res}
+          })
           
         } else {
           alert("Usted NO asistio a este evento");

@@ -6,11 +6,14 @@ import { Container } from 'reactstrap';
 
 
 class Imprimir extends React.Component {
-
     render() {
+        try{
+        const items = this.props.location.state.detail
+        
         return (
             <>
-                <Container className="container">
+                <Container className="container"> 
+
                     <br />
 
                     <div className="jumbotron
@@ -37,7 +40,7 @@ class Imprimir extends React.Component {
                                                 <span className="input-group-addon">
                                                     <i className="glyphicon glyphicon-user"></i>
                                                 </span>
-                                                <input type="text" className="input2 form-control" name="Nombres" id="Nombres" placeholder="Nombres"  aria-describedby="basic-addon1"
+                                                <input type="text" value={items[0].nombre} className="input2 form-control" name="Nombres" id="Nombres" placeholder="Nombres"  aria-describedby="basic-addon1"
                                                     required
                                                 ></input> 
                                             </div>
@@ -50,7 +53,7 @@ class Imprimir extends React.Component {
                                                 <span className="input-group-addon">
                                                     <i className="glyphicon glyphicon-user"></i>
                                                 </span>
-                                                <input type="text" className="input2 form-control" name="Apellidos" id="Apellidos" placeholder="Apellidos"  aria-describedby="basic-addon1"
+                                                <input type="text" value={items[0].apellido} className="input2 form-control" name="Apellidos" id="Apellidos" placeholder="Apellidos"  aria-describedby="basic-addon1"
                                                     required
                                                 ></input> 
                                             </div>
@@ -64,7 +67,7 @@ class Imprimir extends React.Component {
                                                 <span className="input-group-addon">
                                                     <i className="glyphicon glyphicon-envelope"></i>
                                                 </span>
-                                                <input type="text" className="input2 form-control" name="Cedula" id="Cedula" placeholder="Cedula"  aria-describedby="basic-addon1"
+                                                <input type="text" value={items[0].id} className="input2 form-control" name="Cedula" id="Cedula" placeholder="Cedula"  aria-describedby="basic-addon1"
                                                     required
                                                 ></input> 
                                             </div>
@@ -77,7 +80,7 @@ class Imprimir extends React.Component {
                                                 <span className="input-group-addon">
                                                     <i className="glyphicon glyphicon-briefcase"></i>
                                                 </span>
-                                                <input type="email" className="input2 form-control" name="Email" id="Email" placeholder="Email"  aria-describedby="basic-addon1"
+                                                <input type="email" value={items[0].email} className="input2 form-control" name="Email" id="Email" placeholder="Email"  aria-describedby="basic-addon1"
                                                     required
                                                 ></input> 
                                             </div>
@@ -90,7 +93,7 @@ class Imprimir extends React.Component {
                                                 <span className="input-group-addon">
                                                     <i className="glyphicon glyphicon-briefcase"></i>
                                                 </span>
-                                                <input type="text" className="input2 form-control" name="Empresa" id="Empresa" placeholder="Empresa"  aria-describedby="basic-addon1"
+                                                <input type="text" value={items[0].empresa} className="input2 form-control" name="Empresa" id="Empresa" placeholder="Empresa"  aria-describedby="basic-addon1"
                                                     required
                                                 ></input>
                                             </div>
@@ -120,6 +123,13 @@ class Imprimir extends React.Component {
 
             </>
         )
+        }catch(error){
+            return(
+                <Container>
+                    <h5>Acceso denegado</h5>
+                </Container>
+            )
+        }
     }
 }
 export default Imprimir;
