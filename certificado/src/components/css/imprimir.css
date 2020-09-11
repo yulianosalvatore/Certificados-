@@ -47,11 +47,11 @@ h2{
 	width: 200px;
 }
 .ver{
+	position: absolute;
 	background-color: #0079c2;
 	color: antiquewhite;
-    margin-left: 260px;
-    margin-top: -60px;
-    padding-top:-10%;
+    margin-left: 60px;
+    padding-top:100%;
     text-justify: auto;
 	padding: 4px;
 	width: 200px;
