@@ -1,12 +1,5 @@
 
-.input{
-	
-	background: #efeff1 !important ;
-	border-radius: 0px !important;
-	margin-left: 100px;
-	min-height: 30px;
-	min-width: 700px;
-}
+
 .icons{
 	width: 13%;
 }
@@ -42,7 +35,7 @@ body{
 
 .jumbotron{
 	position: absolute;
-	background-image: url("../img/banner6.png");
+	background-image: url("../img/Banner.png");
 	background-size: cover;
 	background-repeat: no-repeat;
 	margin-top: -15px;
@@ -66,25 +59,7 @@ h2{
 	color: #0079c2;
 }
 
-.load{
-	display: table;
-	position: fixed;
-	z-index: 100; 
-	left: 0;
-	top: 0;
-	width: 100%; 
-	height: 100%; 
-	overflow: auto; 
-	background-color: rgb(255,255,255); 
-	background-color: rgba(255,255,255,0.8); 
-}
 
-.image-load{
-	display: table-cell;
-	vertical-align: middle;
-	text-align: center;
-	margin: auto;
-}
 
 .Enviar{
 	background-color: #0079c2;
@@ -112,10 +87,7 @@ h2{
     }
 }
 
-#formEditar{
-	display: none;
-	
-}
+
 .from1{
 	margin-top: 150px;
 	padding-left: 160px;

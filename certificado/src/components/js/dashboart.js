@@ -13,18 +13,21 @@ class DASH extends React.Component {
   //     })
   // }
   Email = React.createRef();
-
+  Evento = React.createRef();
   handle = (e) => {
     e.preventDefault();
+    const evento =this.Evento.current.value;
     const email = this.Email.current.value;
     const valor = {};
+    const valor1 ={};
     // alert(this.Email.current.value)
 
     var raw = JSON.stringify({ email: email });
+    var raw1 = JSON.stringify({ evento: evento});
 
     fetch("http://localhost:4000/select", {
       method: "post",
-      body: raw,
+      body: raw,raw1,
       headers: {
         "Content-Type": "application/json",
       },
@@ -32,7 +35,8 @@ class DASH extends React.Component {
       .then((response) => response.json())
       .then((res) => {
         if (res[0]) {
-          alert("SI se encuentra registrado el correo");
+            alert("SI se encuentra registrado el correo");
+          
         } else {
           alert("NO se encuentra registrado el correo");
         }
@@ -71,7 +75,7 @@ class DASH extends React.Component {
                   onSubmit={this.handle}
                   className="form-horizontal"
                   id="formConsulta"
-                  action="" //logica/controlador/ctrlBusqueda.php
+                  action=""
                   method="post"
                   enctype="url-encoded"
                   autocomplete="on"
@@ -105,6 +109,7 @@ class DASH extends React.Component {
                           </span>
                         </div>
                         <select
+                          ref={this.Evento}
                           name="Evento"
                           id="Evento"
                           className="input2 form-control"
@@ -165,7 +170,7 @@ class DASH extends React.Component {
                   <div className="form-group">
                     <label className="col-sm-4 control-label"></label>
                     <div className="col-sm-4">
-                      <button type="submit" className="Enviar" id="Enviar">
+                      <button type="submit"  className="Enviar" id="Enviar">
                         Consultar&nbsp;<i class="glyphicon glyphicon-send"></i>
                       </button>
                     </div>

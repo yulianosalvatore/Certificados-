@@ -1,0 +1,95 @@
+
+
+body{
+    background-image: url("../img/fondocarousel.png");
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.panel-body{
+    background-image: url("../img/fondocarousel.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.jumbotron{
+	position: absolute;
+	background-image: url("../img/Banner.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin-top: -15px;
+	margin-left: -110px;
+	max-width: 98%;
+}
+
+#content{
+	padding-bottom: 20px;
+}
+
+.img-responsive{
+	display: initial;
+}
+
+form{
+	color: black;
+}
+
+h2{
+	color: #0079c2;
+}
+
+
+.Imprimir{
+	background-color: #0079c2;
+	color: antiquewhite;
+    margin-left: 10px;
+    text-justify: auto;
+	padding: 4px;
+	width: 200px;
+}
+.ver{
+	background-color: #0079c2;
+	color: antiquewhite;
+    margin-left: 260px;
+    margin-top: -60px;
+    padding-top:-10%;
+    text-justify: auto;
+	padding: 4px;
+	width: 200px;
+}
+
+/* .checkboxContainer .form-control-feedback{
+    right: -25px !important;
+}
+
+.selectGroupContainer .form-control-feedback{
+    right: 35px !important;
+} */
+
+
+ 
+/* #formEditar{
+    display: flexbox;
+    text-align-last: left;
+} */
+
+.from10{
+	margin-top: 100px;
+    padding-left: 280px;
+    margin-left: 10px;
+}
+
+
+.titulo{
+	margin-left: -170px;
+}
+
+.input1{
+	background: #efeff1 !important;
+	border-radius: 0px !important;
+    min-width: 100%!important;
+    min-height: 100% !important;
+	font-size: 1em !important;
+    color: #212121 !important ;
+    outline: none !important;
+    text-decoration: none !important;
+}

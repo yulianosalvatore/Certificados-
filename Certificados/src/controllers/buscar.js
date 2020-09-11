@@ -6,7 +6,7 @@ const getAsis = async (req, res)=>{
     const response = await pool.query('select "asistencia" from semillero."EventoCucuta" WHERE email= $1',[correo]);
     res.status(200).json(response.rows);
 
-    if (response == 1 || response ==si) {
+    if (response ==si) {
         alert('incluir formulario imprimir ')
     }else{
           alert('El usuario se registro pero no asistio al curso ')

@@ -16,8 +16,11 @@ const getTableData = (req, res, db) => {
 //consultar por correo un solo registro
 const getData = (req, res, db) => {
   const { email } = req.body;
+  const {evento} =req.body;
+  // cursos ="EventoCucuta";
+  cursos = { evento }.evento;
   value = [{ email }.email];
-  db.query('select * from semillero."EventoCucuta" where email = $1', value)
+  db.query('select * from semillero."'+cursos+'" where email = $1', value)
     .then((items) => {
       if (items.rows.length) {
         res.json(items.rows);

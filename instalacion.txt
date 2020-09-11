@@ -6,4 +6,5 @@ En caso de error:
 
 back (certificados):
   npm install
+  npm install pdfkit
   npm i express body-parser pg knex dotenv helmet cors morgan
