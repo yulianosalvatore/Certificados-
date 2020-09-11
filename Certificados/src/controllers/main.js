@@ -18,8 +18,8 @@ const getData = (req, res, db) => {
   const { email } = req.body;
   const {evento} =req.body;
   // cursos ="EventoCucuta";
-  cursos = { evento }.evento;
-  value = [{ email }.email];
+  cursos = evento;
+  value = [email];
   db.query('select * from semillero."'+cursos+'" where email = $1', value)
     .then((items) => {
       if (items.rows.length) {

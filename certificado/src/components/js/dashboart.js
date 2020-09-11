@@ -18,16 +18,13 @@ class DASH extends React.Component {
     e.preventDefault();
     const evento =this.Evento.current.value;
     const email = this.Email.current.value;
-    const valor = {};
-    const valor1 ={};
     // alert(this.Email.current.value)
 
-    var raw = JSON.stringify({ email: email });
-    var raw1 = JSON.stringify({ evento: evento});
+    var raw = JSON.stringify({ email: email,evento: evento });
 
     fetch("http://localhost:4000/select", {
       method: "post",
-      body: raw,raw1,
+      body: raw,
       headers: {
         "Content-Type": "application/json",
       },
@@ -35,10 +32,10 @@ class DASH extends React.Component {
       .then((response) => response.json())
       .then((res) => {
         if (res[0]) {
-            alert("SI se encuentra registrado el correo");
+            alert("Usted SI asistio a este evento");
           
         } else {
-          alert("NO se encuentra registrado el correo");
+          alert("Usted NO asistio a este evento");
         }
       })
       .catch((err) => console.log(err));
