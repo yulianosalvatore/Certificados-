@@ -32,7 +32,7 @@ class DASH extends React.Component {
       .then((response) => response.json())
       .then((res) => {
         if (res[0]) {
-            alert("Usted SI asistio a este evento");
+          this.props.history.push('/imprimir');
           
         } else {
           alert("Usted NO asistio a este evento");
