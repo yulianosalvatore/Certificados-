@@ -21,7 +21,7 @@ const getData = (req, res, db) => {
   // cursos ="EventoCucuta";
   cursos = evento;
   value = [email];
-  db.query('select * from semillero."'+cursos+'" where email = $1', value)
+  db.query('select * from semillero."'+cursos+'" where email = $1 and asistencia= '+"'1'", value, )
     .then((items) => {
       if (items.rows.length) {
         res.json(items.rows);

@@ -6,6 +6,34 @@ import { Container } from 'reactstrap';
 
 
 class Imprimir extends React.Component {
+        Nombre = React.createRef();
+        apellido = React.createRef();
+        Cedula = React.createRef();
+        empresa = React.createRef();
+    handle = (e) => {
+        const nombre =this.Nombre.current.value;
+        const Apellido = this.apellido.current.value;
+        const cedula = this.Cedula.current.value;
+        const Empresa = this.empresa.current.value;
+        e.preventDefault();
+        var raw = JSON.stringify({
+            "id": cedula,
+            "nombre":nombre,
+            "apellido":Apellido,
+            "empresa":Empresa,
+            "email":nombre
+        });
+
+    fetch("http://localhost:4000/pdf", {
+      method: "post",
+      body: raw,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {alert("pdf generado con exito.")})
+      .catch((err) => console.log(err));
+      };
     render() {
         try{
         const items = this.props.location.state.detail
@@ -16,8 +44,7 @@ class Imprimir extends React.Component {
 
                     <br />
 
-                    <div className="jumbotron
-">
+                    <div className="jumbotron">
                     </div>
 
 
@@ -30,17 +57,17 @@ class Imprimir extends React.Component {
                             </div>
                             {/* formulario a editar para completar datos y poder imprimir */}
                             <div className="from10">
-                                <form className="form-horizontal" id="formEditar" action=""
+                                <form className="form-horizontal" onSubmit={this.handle} id="formEditar" action=""
                                     method="post" enctype="url-encoded" autocomplete="on">
 
                                     <div className="form-group">
-                                        <label className="control-label col-sm-2" for="Nombres">Nombres*</label>
+                                        <label className="control-label col-sm-2"  for="Nombres">Nombres*</label>
                                         <div className="col-sm-8 inputGroupContainer">
                                             <div className="input-group">
                                                 <span className="input-group-addon">
                                                     <i className="glyphicon glyphicon-user"></i>
                                                 </span>
-                                                <input type="text" value={items[0].nombre} className="input2 form-control" name="Nombres" id="Nombres" placeholder="Nombres"  aria-describedby="basic-addon1"
+                                                <input type="text" ref={this.Nombre} value={items[0].nombre} className="input2 form-control" name="Nombres" id="Nombres" placeholder="Nombres"  aria-describedby="basic-addon1"
                                                     required
                                                 ></input> 
                                             </div>
@@ -53,7 +80,7 @@ class Imprimir extends React.Component {
                                                 <span className="input-group-addon">
                                                     <i className="glyphicon glyphicon-user"></i>
                                                 </span>
-                                                <input type="text" value={items[0].apellido} className="input2 form-control" name="Apellidos" id="Apellidos" placeholder="Apellidos"  aria-describedby="basic-addon1"
+                                                <input type="text" ref={this.apellido} value={items[0].apellido} className="input2 form-control" name="Apellidos" id="Apellidos" placeholder="Apellidos"  aria-describedby="basic-addon1"
                                                     required
                                                 ></input> 
                                             </div>
@@ -67,7 +94,7 @@ class Imprimir extends React.Component {
                                                 <span className="input-group-addon">
                                                     <i className="glyphicon glyphicon-envelope"></i>
                                                 </span>
-                                                <input type="text" value={items[0].id} className="input2 form-control" name="Cedula" id="Cedula" placeholder="Cedula"  aria-describedby="basic-addon1"
+                                                <input type="text" ref={this.Cedula} value={items[0].id} className="input2 form-control" name="Cedula" id="Cedula" placeholder="Cedula"  aria-describedby="basic-addon1"
                                                     required
                                                 ></input> 
                                             </div>
@@ -93,7 +120,7 @@ class Imprimir extends React.Component {
                                                 <span className="input-group-addon">
                                                     <i className="glyphicon glyphicon-briefcase"></i>
                                                 </span>
-                                                <input type="text" value={items[0].empresa} className="input2 form-control" name="Empresa" id="Empresa" placeholder="Empresa"  aria-describedby="basic-addon1"
+                                                <input type="text" ref={this.empresa}  value={items[0].empresa} className="input2 form-control" name="Empresa" id="Empresa" placeholder="Empresa"  aria-describedby="basic-addon1"
                                                     required
                                                 ></input>
                                             </div>
@@ -108,7 +135,7 @@ class Imprimir extends React.Component {
                                         <div className="col-sm-4">
                                             <button type="submit" className="Imprimir" id="Imprimir">Imprimir&nbsp;<i
                                                 className="glyphicon glyphicon-print"></i></button>
-                                                <button type="submit" className="ver" id="ver">Ver&nbsp;<i
+                                                <button className="ver" id="ver">Ver&nbsp;<i
                                                 className="glyphicon glyphicon-print"></i></button>
                                         </div>
                                     </div>
@@ -126,8 +153,9 @@ class Imprimir extends React.Component {
         }catch(error){
             return(
                 <Container>
-                    <h5>Acceso denegado</h5>
+                    {this.props.history.push('/')}
                 </Container>
+                
             )
         }
     }
