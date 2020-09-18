@@ -161,7 +161,7 @@ class DASH extends React.Component {
                           </span>
                         </div>
                         <input
-                          type="text"
+                          type="email"
                           ref={this.Email}
                           className="input2 form-control"
                           name="Correo"

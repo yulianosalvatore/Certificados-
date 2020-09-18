@@ -23,6 +23,7 @@ const db = new Pool(config);
 
 // Controllers - aka, las consultas a db 
 const main = require('./src/controllers/main')
+const pdf = require('./src/controllers/pdf');
 
 // App
 const app = express()
@@ -51,6 +52,8 @@ app.post('/Select/', (req, res) => main.getData(req, res, db))
 app.post('/user', (req, res) => main.createUser(req, res, db))
 app.put('/user', (req, res) => main.updateUser(req, res, db))
 app.delete('/user', (req, res) => main.deleteUser(req, res, db))
+app.post('/pdf', (req, res) => pdf.getUsersPdf(req, res, db));
+
 
 // App Server Connection
 app.listen(process.env.PORT || 4000, () => {
