@@ -1,5 +1,7 @@
 
-
+.swal-modal {
+	border: 3px solid #00BECB;;
+  }
 .icons{
 	width: 13%;
 }

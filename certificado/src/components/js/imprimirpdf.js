@@ -1,11 +1,28 @@
 import React from 'react';
 import '../css/imprimir.css';
+import sweet from "sweetalert"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'reactstrap';
 
 
 
 class Imprimir extends React.Component {
+    state = this.props.location.state.detail[0]
+    nombreChange(value){
+        this.setState({
+            nombre: value
+        });
+    }
+    apellidoChange(value){
+        this.setState({
+            apellido: value
+        });
+    }
+    empresaChange(value){
+        this.setState({
+            empresa: value
+        });
+    }
         Nombre = React.createRef();
         apellido = React.createRef();
         Cedula = React.createRef();
@@ -31,7 +48,12 @@ class Imprimir extends React.Component {
         "Content-Type": "application/json",
       },
     })
-      .then((response) => {alert("pdf generado con exito.")})
+      .then((response) => {sweet({
+        text: "pdf generado con exito.",
+        icon:"success",
+        timer:"3000",
+        button: false
+      });})
       .catch((err) => console.log(err));
       };
     render() {
@@ -67,7 +89,7 @@ class Imprimir extends React.Component {
                                                 <span className="input-group-addon">
                                                     <i className="glyphicon glyphicon-user"></i>
                                                 </span>
-                                                <input type="text" ref={this.Nombre} value={items[0].nombre} className="input2 form-control" name="Nombres" id="Nombres" placeholder="Nombres"  aria-describedby="basic-addon1"
+                                                <input type="text" onChange={e => this.nombreChange(e.target.value)} value={this.state.nombre} ref={this.Nombre}  className="input2 form-control" name="Nombres" id="Nombres" placeholder="Nombres"  aria-describedby="basic-addon1"
                                                     required
                                                 ></input> 
                                             </div>
@@ -80,7 +102,7 @@ class Imprimir extends React.Component {
                                                 <span className="input-group-addon">
                                                     <i className="glyphicon glyphicon-user"></i>
                                                 </span>
-                                                <input type="text" ref={this.apellido} value={items[0].apellido} className="input2 form-control" name="Apellidos" id="Apellidos" placeholder="Apellidos"  aria-describedby="basic-addon1"
+                                                <input type="text" ref={this.apellido} onChange={e => this.apellidoChange(e.target.value)} value={this.state.apellido} className="input2 form-control" name="Apellidos" id="Apellidos" placeholder="Apellidos"  aria-describedby="basic-addon1"
                                                     required
                                                 ></input> 
                                             </div>
@@ -120,7 +142,7 @@ class Imprimir extends React.Component {
                                                 <span className="input-group-addon">
                                                     <i className="glyphicon glyphicon-briefcase"></i>
                                                 </span>
-                                                <input type="text" ref={this.empresa}  value={items[0].empresa} className="input2 form-control" name="Empresa" id="Empresa" placeholder="Empresa"  aria-describedby="basic-addon1"
+                                                <input type="text" ref={this.empresa}  onChange={e => this.empresaChange(e.target.value)} value={this.state.empresa} className="input2 form-control" name="Empresa" id="Empresa" placeholder="Empresa"  aria-describedby="basic-addon1"
                                                     required
                                                 ></input>
                                             </div>
