@@ -1,10 +1,9 @@
 Front (certificado):
   npm install
-  npm i react react-router-dom
+  npm i react react-router-dom sweetalert
 En caso de error: 
   npm i react-scripts
 
 back (certificados):
   npm install
-  npm install pdfkit
-  npm i express body-parser pg knex dotenv helmet cors morgan
+  npm i express body-parser pg knex dotenv helmet cors morgan pdfkit

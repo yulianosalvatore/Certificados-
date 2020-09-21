@@ -1,6 +1,7 @@
 import React from "react";
 import "../css/style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import sweet from "sweetalert"
 import { Container } from "reactstrap";
 
 class DASH extends React.Component {
@@ -44,7 +45,12 @@ class DASH extends React.Component {
           })
           
         } else {
-          alert("Usted NO asistio a este evento");
+          sweet({
+            text: "Usted NO asistio a este evento",
+            icon:"error",
+            timer:"3000",
+            button: false
+          });
         }
       })
       .catch((err) => console.log(err));
