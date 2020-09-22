@@ -129,7 +129,7 @@ class Imprimir extends React.Component {
                                                 <span className="input-group-addon">
                                                     <i className="glyphicon glyphicon-briefcase"></i>
                                                 </span>
-                                                <input type="email" value={items[0].email} className="input2 form-control" name="Email" id="Email" placeholder="Email"  aria-describedby="basic-addon1"
+                                                <input type="email"ref={this.email}  onChange={e => this.emailChange(e.target.value)} value={this.state.email}  className="input2 form-control" name="Email" id="Email" placeholder="Email"  aria-describedby="basic-addon1"
                                                     required
                                                 ></input> 
                                             </div>

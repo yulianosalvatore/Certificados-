@@ -28,21 +28,21 @@ const getUsersPdf = async (req, res,db) => {
 
             //texto
             pdf.moveDown()
-            .fillColor('black')
-
-            .font('Times-Roman')
-            .fontSize(20)
-            .text(' ' + id, 87, 160, {
-                align: 'center',
-                width: 600,
-                indent: 30,
-                height: 200,
-                ellipsis: true
-            });
+                .fillColor('black')
+                .font('Times-Roman')
+                .fontSize(11)
+                .text('Certifico que ', 87, 160,{
+                    align: 'center',
+                    width: 600,
+                    indent: 30,
+                    height: 200,
+                    ellipsis: true
+                });
+            
             pdf.moveDown()
                 .fillColor('black')
                 .font('Times-Roman')
-                .fontSize(20)
+                .fontSize(30)
                 .text('' + nombre + ' ' + apellido, {
                     align: 'center',
                     width: 600,
@@ -53,34 +53,13 @@ const getUsersPdf = async (req, res,db) => {
                
 
            
-            pdf.moveDown()
-                .fillColor('black')
-                .font('Times-Roman')
-                .fontSize(20)
-                .text(' ' + empresa, {
-                    align: 'center',
-                    width: 600,
-                    indent: 30,
-                    height: 200,
-                    ellipsis: true
-                });
-            pdf.moveDown()
-                .fillColor('black')
-                .font('Times-Roman')
-                .fontSize(20)
-                .text(' ' + email, {
-                    align: 'center',
-                    width: 600,
-                    indent: 30,
-                    height: 200,
-                    ellipsis: true
-                });
-                
+            
+            
                 pdf.moveDown()
                 .fillColor('black')
                 .font('Times-Roman')
                 .fontSize(11)
-                .text('Asistio a ',{
+                .text('Asistió a el',{
                     align: 'center',
                     width: 600,
                     indent: 30,
@@ -90,8 +69,19 @@ const getUsersPdf = async (req, res,db) => {
                 pdf.moveDown()
                 .fillColor('black')
                 .font('Times-Roman')
-                .fontSize(20)
+                .fontSize(30)
                 .text('Evento Cucuta 2019',{
+                    align: 'center',
+                    width: 600,
+                    indent: 30,
+                    height: 200,
+                    ellipsis: true
+                });
+                pdf.moveDown()
+                .fillColor('black')
+                .font('Times-Roman')
+                .fontSize(30)
+                .text(' ' + empresa, {
                     align: 'center',
                     width: 600,
                     indent: 30,
