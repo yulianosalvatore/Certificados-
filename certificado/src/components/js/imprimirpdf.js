@@ -33,28 +33,12 @@ class Imprimir extends React.Component {
         const cedula = this.Cedula.current.value;
         const Empresa = this.empresa.current.value;
         e.preventDefault();
-        var raw = JSON.stringify({
-            "id": cedula,
-            "nombre":nombre,
-            "apellido":Apellido,
-            "empresa":Empresa,
-            "email":nombre
-        });
-
-    fetch("http://localhost:4000/pdf", {
-      method: "post",
-      body: raw,
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => {sweet({
-        text: "pdf generado con exito.",
-        icon:"success",
-        timer:"3000",
-        button: false
-      });})
-      .catch((err) => console.log(err));
+        this.props.history.push({
+            pathname: '/generarpdf',
+            state: { detail: this.state}
+          })
+        // var win = window.open('/generarpdf/'+this.state, '_blank');
+//   win.focus();
       };
     render() {
         try{
@@ -155,9 +139,7 @@ class Imprimir extends React.Component {
                                     <div className="form-group">
                                         <label className="col-sm-4 control-label"></label>
                                         <div className="col-sm-4">
-                                            <button type="submit" className="Imprimir" id="Imprimir">Imprimir&nbsp;<i
-                                                className="glyphicon glyphicon-print"></i></button>
-                                                <button className="ver" id="ver">Ver&nbsp;<i
+                                            <button type="submit" className="Imprimir" id="Imprimir">Descargar PDF&nbsp;<i
                                                 className="glyphicon glyphicon-print"></i></button>
                                         </div>
                                     </div>

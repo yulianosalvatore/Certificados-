@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-import Generar from './components/js/generarpdf'
+import Generar from './components/js/generarpdf.jsx'
 import DASH from './components/js/dashboart'
 import Crud from './components/js/crud'
 import Imprimir from './components/js/imprimirpdf'
