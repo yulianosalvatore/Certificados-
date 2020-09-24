@@ -20,11 +20,11 @@ class DASH extends React.Component {
   Evento = React.createRef();
   handle = (e) => {
     e.preventDefault();
-    const evento =this.Evento.current.value;
+    const evento = this.Evento.current.value;
     const email = this.Email.current.value;
     // alert(this.Email.current.value)
 
-    var raw = JSON.stringify({ email: email,evento: evento });
+    var raw = JSON.stringify({ email: email, evento: evento });
 
     fetch("http://localhost:4000/select", {
       method: "post",
@@ -41,14 +41,14 @@ class DASH extends React.Component {
           // this.props.history.push('/imprimir');
           this.props.history.push({
             pathname: '/imprimir',
-            state: { detail: res}
+            state: { detail: res }
           })
-          
+
         } else {
           sweet({
             text: "Usted NO asistio a este evento",
-            icon:"error",
-            timer:"3000",
+            icon: "error",
+            timer: "3000",
             button: false
           });
         }
@@ -182,7 +182,7 @@ class DASH extends React.Component {
                   <div className="form-group">
                     <label className="col-sm-4 control-label"></label>
                     <div className="col-sm-4">
-                      <button type="submit"  className="Enviar" id="Enviar">
+                      <button type="submit" className="Enviar" id="Enviar">
                         Consultar&nbsp;<i class="glyphicon glyphicon-send"></i>
                       </button>
                     </div>
@@ -192,6 +192,13 @@ class DASH extends React.Component {
             </div>
           </div>
           <br />
+          <br />
+          <footer className="footer">
+            <div className="container">
+              <p className="text-muted credit">Powered by <a target="_blank"
+                href="http://desarrolladores.esri.co">GeoGeeks</a>.</p>
+            </div>
+          </footer>
         </Container>
       </>
     );

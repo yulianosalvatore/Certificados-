@@ -2,7 +2,7 @@
 
 body{
     background-image: url("../img/fondocarousel.png");
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'AvenirCondensedHand';
 }
 
 .panel-body{
@@ -13,7 +13,7 @@ body{
 
 .jumbotron{
 	position: absolute;
-	/* background-image: url("../img/Banner.png"); */
+	background-image: url("../img/Banner.png");
 	background-size: cover;
 	background-repeat: no-repeat;
 	margin-top: -15px;
@@ -23,6 +23,7 @@ body{
 
 #content{
 	padding-bottom: 20px;
+	font-family: 'AvenirCondensedHand';
 }
 
 .img-responsive{
@@ -35,6 +36,7 @@ form{
 
 h2{
 	color: #0079c2;
+	font-family: 'AvenirCondensedHand';
 }
 
 
@@ -45,6 +47,7 @@ h2{
     text-justify: auto;
 	padding: 4px;
 	width: 200px;
+	font-family: 'AvenirCondensedHand';
 }
 .ver{
 	position: absolute;
@@ -55,6 +58,7 @@ h2{
     text-justify: auto;
 	padding: 4px;
 	width: 200px;
+	font-family: 'AvenirCondensedHand';
 }
 
 /* .checkboxContainer .form-control-feedback{
@@ -75,12 +79,14 @@ h2{
 .from10{
 	margin-top: 100px;
     padding-left: 280px;
-    margin-left: 10px;
+	margin-left: 10px;
+	font-family: 'AvenirCondensedHand';
 }
 
 
 .titulo{
 	margin-left: -170px;
+	font-family: 'AvenirCondensedHand';
 }
 
 .input1{
@@ -91,5 +97,6 @@ h2{
 	font-size: 1em !important;
     color: #212121 !important ;
     outline: none !important;
-    text-decoration: none !important;
+	text-decoration: none !important;
+	font-family: 'AvenirCondensedHand';
 }

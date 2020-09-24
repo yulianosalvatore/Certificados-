@@ -7,7 +7,6 @@ import DASH from './components/js/dashboart'
 import Crud from './components/js/crud'
 import Imprimir from './components/js/imprimirpdf'
 
-
 function App() {
   return (
     <Router>

@@ -24,7 +24,7 @@ const getUsersPdf = async (req, res,db) => {
 //contenido del pdf 
             //imagen
             pdf.moveDown()
-                        .image('./src/img/certCCU.png', 0, 5, { width: 808 })
+                        .image('./src/img/CertCucuta2019.png', 0, 5, { width: 808 })
 
             //texto
             pdf.moveDown()

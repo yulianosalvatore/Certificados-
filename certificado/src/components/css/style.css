@@ -18,7 +18,8 @@
     /* border: 1px; */
     /* padding: 10px 8px; */
     outline: none;
-    text-decoration: none;
+	text-decoration: none;
+	font-family: 'AvenirCondensedHand';
 }
 .left{
 	text-align-last: left;
@@ -26,7 +27,7 @@
 
 body{
     background-image: url("../img/fondocarousel.png");
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'AvenirCondensedHand';
 }
 
 .panel-body{
@@ -37,7 +38,7 @@ body{
 
 .jumbotron{
 	position: absolute;
-	/* background-image: url("../img/Banner.png"); */
+	background-image: url("../img/Banner.png");
 	background-size: cover;
 	background-repeat: no-repeat;
 	margin-top: -15px;
@@ -47,6 +48,7 @@ body{
 
 #content{
 	padding-bottom: 20px;
+	font-family: 'AvenirCondensedHand';
 }
 
 .img-responsive{
@@ -59,6 +61,7 @@ form{
 
 h2{
 	color: #0079c2;
+	font-family: 'AvenirCondensedHand';
 }
 
 
@@ -66,6 +69,7 @@ h2{
 .Enviar{
 	background-color: #0079c2;
 	color: antiquewhite;
+	font-family: 'AvenirCondensedHand';
 	margin-left: 200px;
 	padding: 4px;
 	width: 300px;
@@ -93,10 +97,15 @@ h2{
 .from1{
 	margin-top: 150px;
 	padding-left: 160px;
+	font-family: 'AvenirCondensedHand';
 }
 
 .titulo{
 	margin-left: -170px;
+	font-family: 'AvenirCondensedHand';
+}
+.container{
+	font-family: 'AvenirCondensedHand';
 }
 
 
