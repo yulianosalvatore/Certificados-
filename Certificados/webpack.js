@@ -15,8 +15,8 @@ const morgan = require('morgan') // solicitudes de registros
 const config = ({
   host:'localhost',
   user:'postgres',
-  password:'yuliano08',
-  // password:'a12112001',
+  // password:'yuliano08',
+  password:'a12112001',
   database:'mercadeonosa'
 })
 const db = new Pool(config);

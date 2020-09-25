@@ -14,7 +14,7 @@ class Generar extends React.Component {
   apellido = this.items.apellido;
   empresa = this.items.empresa;
   email = this.items.email;
-  Document(){
+  componentDidMount(){
   // Create styles
   const styles = StyleSheet.create({
     Text: {
@@ -81,14 +81,17 @@ class Generar extends React.Component {
     document.getElementById("root").style.position="absolute"
     document.getElementById("root").style.height="100%"
     document.getElementsByTagName("body")[0].style.overflowY="hidden"
-    ReactDOM.render( <App></App>, document.getElementById("root"));
+    ReactDOM.render( <App></App>, document.getElementById("pdf"));
+
   }
+  
     render() {
-      this.Document()
+      
+        
       // ReactDOM.render( <App></App>, document.getElementsByTagName('body')[0]);
         return (
           // <h1></h1>
-          <div >
+          <div id="pdf" style={{width:"100%",height:"100%",position:"absolute"}}>
             {/* <App width="100%" height="100%"></App> */}
           </div>
         );
