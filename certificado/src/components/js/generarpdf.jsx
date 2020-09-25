@@ -1,12 +1,14 @@
 import React from 'react';
 import '../css/generar.css';
-import pic from "../img/certCCU.png"
-import ReactDOM from "react-dom"
+import pic from "../img/CertCucuta2019.png";
+import ReactDOM from "react-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Page, Text, View, Document, StyleSheet,Image, PDFViewer } from '@react-pdf/renderer';
 
+
 class Generar extends React.Component {
   items = this.props.location.state.detail
+  evento = this.props.location.state.evento
   id =this.items.id
   nombre = this.items.nombre;
   apellido = this.items.apellido;
@@ -15,9 +17,12 @@ class Generar extends React.Component {
   Document(){
   // Create styles
   const styles = StyleSheet.create({
+    Text: {
+      fontFamily: 'AvenirCondensedHand'
+    },
     page: {
       alignItems: 'center',
-      
+      Fontfamily: 'AvenirCondensedHand',
     },
     section: {
       width: 200,
@@ -49,9 +54,21 @@ class Generar extends React.Component {
     <Text >  </Text>
     <Text >  </Text>
     <Text >  </Text>
-    <Text style={{fontSize:"11"}}>Certifico que </Text>
     <Text >  </Text>
-  <Text >{this.nombre} {this.apellido}</Text>
+    <Text style={{fontSize:"11"}}>Certifico que </Text>
+  <Text  style={{fontSize:"35"}}>{this.nombre} {this.apellido}</Text>
+  <Text style={{fontSize:"13"}}>C.C {this.id} </Text>
+    <Text style={{fontSize:"13"}}>{this.email}</Text>
+    <Text > </Text>
+    <Text > </Text>
+    <Text style={{fontSize:"11"}}>Asistio a </Text>
+    <Text  style={{fontSize:"25"}}>{this.evento} </Text>
+    <Text > </Text>
+    <Text >  </Text>
+    <Text >  </Text>
+    <Text >  </Text>
+    <Text style={{fontSize:"12"}}>Helena Gutiérres  </Text>
+    <Text style={{fontSize:"12"}}>Presidente  </Text>
     </Page>
   </Document>
     );

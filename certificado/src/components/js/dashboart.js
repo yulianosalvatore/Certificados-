@@ -22,9 +22,12 @@ class DASH extends React.Component {
     e.preventDefault();
     const evento = this.Evento.current.value;
     const email = this.Email.current.value;
+    const split = evento.split(",");
+    const evento1 =  split[0];
+    const evento2= split[1];
     // alert(this.Email.current.value)
 
-    var raw = JSON.stringify({ email: email, evento: evento });
+    var raw = JSON.stringify({ email: email, evento: evento1 });
 
     fetch("http://localhost:4000/select", {
       method: "post",
@@ -41,7 +44,7 @@ class DASH extends React.Component {
           // this.props.history.push('/imprimir');
           this.props.history.push({
             pathname: '/imprimir',
-            state: { detail: res }
+            state: { detail: res, evento: evento2 }
           })
 
         } else {
@@ -130,25 +133,24 @@ class DASH extends React.Component {
                           required
                         >
                           <option value="">Seleccione el evento</option>
-                          <option value="WebinarMineria2020">
-                            Webinar Cómo habilitar la eficiencia operacional en
-                            procesos mineros con ArcGIS
+                          <option value="WebinarMineria2020, Webinar Cómo habilitar la eficiencia operacional en procesos mineros con ArcGIS">
+                            Webinar Cómo habilitar la eficiencia operacional en procesos mineros con ArcGIS
                           </option>
-                          <option value="WebinarCovid2020">
+                          <option value="WebinarCovid2020, Webinar Solución de continuidad del negocio durante  el COVID-19">
                             Webinar Solución de continuidad del negocio durante
                             el COVID-19{" "}
                           </option>
-                          <option value="CCU2019">CCU 2019</option>
-                          <option value="CRU2018">CRU 2018</option>
-                          <option value="CCU2018_Asistentes">CCU 2018</option>
-                          <option value="CRU2019Buc">
+                          <option value="CCU2019, CCU 2019">CCU 2019</option>
+                          <option value="CRU2018, CRU 2018">CRU 2018</option>
+                          <option value="CCU2018_Asistentes, CCU 2018">CCU 2018</option>
+                          <option value="CRU2019Buc,  CRU 2019 Bucaramanga">
                             CRU 2019 Bucaramanga
                           </option>
-                          <option value="CRU2019Cali">CRU 2019 Cali</option>
-                          <option value="CRU2019Barr">
+                          <option value="CRU2019Cali, CRU 2019 Cali">CRU 2019 Cali</option>
+                          <option value="CRU2019Barr, CRU 2019 Barranquilla">
                             CRU 2019 Barranquilla
                           </option>
-                          <option value="EventoCucuta">
+                          <option value="EventoCucuta, Evento Cucuta 2019">
                             Evento Cucuta 2019
                           </option>
                         </select>

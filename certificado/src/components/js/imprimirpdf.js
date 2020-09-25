@@ -8,6 +8,7 @@ import { Container } from 'reactstrap';
 
 class Imprimir extends React.Component {
     state = this.props.location.state.detail[0]
+    evento =this.props.location.state.evento
     nombreChange(value){
         this.setState({
             nombre: value
@@ -35,7 +36,7 @@ class Imprimir extends React.Component {
         e.preventDefault();
         this.props.history.push({
             pathname: '/generarpdf',
-            state: { detail: this.state}
+            state: { detail: this.state, evento:this.evento}
           })
         // var win = window.open('/generarpdf/'+this.state, '_blank');
 //   win.focus();

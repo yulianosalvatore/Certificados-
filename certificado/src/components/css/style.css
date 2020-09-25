@@ -19,7 +19,7 @@
     /* padding: 10px 8px; */
     outline: none;
 	text-decoration: none;
-	font-family: 'AvenirCondensedHand';
+	font-family: 'avenir-next-lt-pro';
 }
 .left{
 	text-align-last: left;
@@ -27,7 +27,7 @@
 
 body{
     background-image: url("../img/fondocarousel.png");
-	font-family: 'AvenirCondensedHand';
+	font-family: 'avenir-next-lt-pro';
 }
 
 .panel-body{
@@ -38,7 +38,7 @@ body{
 
 .jumbotron{
 	position: absolute;
-	background-image: url("../img/Banner.png");
+	background-image: url("../img/Banner1.png");
 	background-size: cover;
 	background-repeat: no-repeat;
 	margin-top: -15px;
@@ -48,7 +48,7 @@ body{
 
 #content{
 	padding-bottom: 20px;
-	font-family: 'AvenirCondensedHand';
+	font-family: 'avenir-next-lt-pro';
 }
 
 .img-responsive{
@@ -61,7 +61,7 @@ form{
 
 h2{
 	color: #0079c2;
-	font-family: 'AvenirCondensedHand';
+	font-family: 'avenir-next-lt-pro';
 }
 
 
@@ -69,7 +69,7 @@ h2{
 .Enviar{
 	background-color: #0079c2;
 	color: antiquewhite;
-	font-family: 'AvenirCondensedHand';
+	font-family: 'avenir-next-lt-pro';
 	margin-left: 200px;
 	padding: 4px;
 	width: 300px;
@@ -97,15 +97,15 @@ h2{
 .from1{
 	margin-top: 150px;
 	padding-left: 160px;
-	font-family: 'AvenirCondensedHand';
+	font-family: 'avenir-next-lt-pro';
 }
 
 .titulo{
 	margin-left: -170px;
-	font-family: 'AvenirCondensedHand';
+	font-family: 'avenir-next-lt-pro';
 }
 .container{
-	font-family: 'AvenirCondensedHand';
+	font-family: 'avenir-next-lt-pro';
 }
 
 
