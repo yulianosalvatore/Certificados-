@@ -14,12 +14,12 @@ body{
 .jumbotron{
 	position: absolute;
 	background-image: url("../img/Banner1.png");
-	background-size: cover;
+	background-size: 100% 100%;
 	background-repeat: no-repeat;
-	margin-top: -15px;
-	margin-left: -110px;
-	max-width: 98%;
-	min-height: 160px;
+	margin-right: 1%;
+	margin-left: 1%;
+	width: 98%;
+	height: 150px;
 }
 
 #content{
@@ -41,7 +41,7 @@ h2{
 }
 
 
-.Imprimir{
+/* .Imprimir{
 	background-color: #0079c2;
 	color: antiquewhite;
     margin-left: 10px;
@@ -49,7 +49,7 @@ h2{
 	padding: 4px;
 	width: 200px;
 	font-family: 'avenir-next-lt-pro';
-}
+} */
 .ver{
 	position: absolute;
 	background-color: #0079c2;
@@ -86,18 +86,7 @@ h2{
 
 
 .titulo{
-	margin-left: -170px;
+	/* margin-left: -170px; */
 	font-family: 'avenir-next-lt-pro';
 }
 
-.input1{
-	background: #efeff1 !important;
-	border-radius: 0px !important;
-    min-width: 100%!important;
-    min-height: 100% !important;
-	font-size: 1em !important;
-    color: #212121 !important ;
-    outline: none !important;
-	text-decoration: none !important;
-	font-family: 'avenir-next-lt-pro';
-}

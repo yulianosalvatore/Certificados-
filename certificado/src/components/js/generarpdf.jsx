@@ -1,20 +1,21 @@
 import React from 'react';
 import '../css/generar.css';
-import pic from "../img/CertCucuta2019.png";
-import ReactDOM from "react-dom";
+import pic from "../img/certCCU.png";
+import ReactDOM, { render } from "react-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Page, Text, View, Document, StyleSheet,Image, PDFViewer } from '@react-pdf/renderer';
-
+import firma from "../img/firmaHelena.png"
 
 class Generar extends React.Component {
-  items = this.props.location.state.detail
-  evento = this.props.location.state.evento
-  id =this.items.id
-  nombre = this.items.nombre;
-  apellido = this.items.apellido;
-  empresa = this.items.empresa;
-  email = this.items.email;
+  
+  
   componentDidMount(){
+    try{
+      const items = this.props.location.state.detail
+  const evento = this.props.location.state.evento
+  const id =items.id
+  const nombre = items.nombre;
+  const apellido = items.apellido;
   // Create styles
   const styles = StyleSheet.create({
     Text: {
@@ -22,7 +23,7 @@ class Generar extends React.Component {
     },
     page: {
       alignItems: 'center',
-      Fontfamily: 'AvenirCondensedHand',
+      Fontfamily: 'AvenirCondensedHand'
     },
     section: {
       width: 200,
@@ -33,6 +34,10 @@ class Generar extends React.Component {
         width: 400,
       },
     },
+    view: {
+      width: '30%',
+      height: '6%',
+  },
     pageBackground: {
       position: 'absolute',
       minWidth: '100%',
@@ -55,18 +60,16 @@ class Generar extends React.Component {
     <Text >  </Text>
     <Text >  </Text>
     <Text >  </Text>
-    <Text style={{fontSize:"11"}}>Certifico que </Text>
-  <Text  style={{fontSize:"35"}}>{this.nombre} {this.apellido}</Text>
-  <Text style={{fontSize:"13"}}>C.C {this.id} </Text>
-    <Text style={{fontSize:"13"}}>{this.email}</Text>
+    <Text style={{fontSize:"11"}}>Certifica que </Text>
+  <Text  style={{fontSize:"35"}}>{nombre} {apellido}</Text>
+  <Text style={{fontSize:"13"}}>{id} </Text>
     <Text > </Text>
     <Text > </Text>
     <Text style={{fontSize:"11"}}>Asistio a </Text>
-    <Text  style={{fontSize:"25"}}>{this.evento} </Text>
-    <Text > </Text>
-    <Text >  </Text>
-    <Text >  </Text>
-    <Text >  </Text>
+    <Text  style={{fontSize:"25"}}>{evento} </Text>
+    <Text>  </Text>
+                        <Image src={firma} style={styles.view} alt="images" />
+                        
     <Text style={{fontSize:"12"}}>Helena Gutiérres  </Text>
     <Text style={{fontSize:"12"}}>Presidente  </Text>
     </Page>
@@ -77,26 +80,28 @@ class Generar extends React.Component {
         <MyDocument />
       </PDFViewer>
     );
-    document.getElementById("root").style.width="100%"
-    document.getElementById("root").style.position="absolute"
-    document.getElementById("root").style.height="100%"
     document.getElementsByTagName("body")[0].style.overflowY="hidden"
     ReactDOM.render( <App></App>, document.getElementById("pdf"));
-
+     } catch{
+            this.props.history.push('/')
+        
+    }
   }
   
     render() {
-      
-        
-      // ReactDOM.render( <App></App>, document.getElementsByTagName('body')[0]);
+      try{
+      const items = this.props.location.state.detail
+  const evento = this.props.location.state.evento
+} catch{
+  this.props.history.push('/')
+
+}   
         return (
-          // <h1></h1>
           <div id="pdf" style={{width:"100%",height:"100%",position:"absolute"}}>
             {/* <App width="100%" height="100%"></App> */}
           </div>
         );
       }
-      
+    
 }
-
 export default Generar;
