@@ -1,6 +1,7 @@
+"use strict";
 const express = require('express')
 const { Pool } = require('pg');
-
+const config = require('./config');
 // use las variables de process.env para mantener las variables privadas,
 require('dotenv').config()
 
@@ -12,18 +13,15 @@ const morgan = require('morgan') // solicitudes de registros
 
 
 // db Connection w/ localhost
-const config = ({
-  host:'localhost',
-  user:'postgres',
-  password:'yuliano08',
-  // password:'a12112001',
-  database:'mercadeonosa'
+const confi = ({
+  host:`${config.POSTGRES.server }`,
+  user:`${config.POSTGRES.user}`,
+  password:`${config.POSTGRES.password}`,
+  database:`${config.POSTGRES.database}`
 })
-const db = new Pool(config);
-
+const db = new Pool(confi);
 // Controllers - aka, las consultas a db 
-const main = require('./src/controllers/main')
-const pdf = require('./src/controllers/pdf');
+const main = require('./src/controllers/main');
 
 // App
 const app = express()
@@ -52,8 +50,6 @@ app.post('/Select/', (req, res) => main.getData(req, res, db))
 app.post('/user', (req, res) => main.createUser(req, res, db))
 app.put('/user', (req, res) => main.updateUser(req, res, db))
 app.delete('/user', (req, res) => main.deleteUser(req, res, db))
-app.post('/pdf', (req, res) => pdf.getUsersPdf(req, res, db));
-
 
 // App Server Connection
 app.listen(process.env.PORT || 4000, () => {

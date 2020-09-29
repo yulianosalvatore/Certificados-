@@ -1,5 +1,4 @@
 
-
 //traemos los datos de la tabla 
 const getUsers = async (req, res,db)=>{
    db.query('select * from semillero."EventoCucuta"')
