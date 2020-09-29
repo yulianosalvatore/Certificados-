@@ -62,7 +62,7 @@ class DASH extends React.Component {
   render() {
     return (
       <>
-        <Container>
+        <div>
           <br />
           {/*  
                      <div className="load">
@@ -76,19 +76,21 @@ class DASH extends React.Component {
                          <img src="../img/bannermobile.png" class="img-responsive visible-xs-block" width="100%" height="auto" alt="Banner Registro"></img>
                      */}
           </div>
+          <br></br>
+          <div >
+          <br></br><br></br>
+          <br></br><br></br>
+          <br></br><br></br>
 
-          <div className="container">
-            <div className="text-center">
-              <div className="from1">
-                <div className="titulo">
-                  <h2>Eventos Esri Colombia</h2>
-                  <h3>Generación de certificados</h3>
+                <div className="titulo text-center">
+                  <h2 >Eventos Esri Colombia</h2>
+                  <h3  >Generación de certificados</h3>
                 </div>
                 {/* Formulario de busqueda de registro por evento y correo */}
-
+                
                 <form
                   onSubmit={this.handle}
-                  className="form-horizontal"
+                  // className="form-horizontal"
                   id="formConsulta"
                   action=""
                   method="post"
@@ -181,17 +183,15 @@ class DASH extends React.Component {
                       </div>
                     </div>
                   </div>
-                  <div className="form-group">
-                    <label className="col-sm-4 control-label"></label>
-                    <div className="col-sm-4">
+                  <div className="form-group ">
+                  <br></br>
+                  <div className="lado">
                       <button type="submit" className="Enviar" id="Enviar">
-                        Consultar&nbsp;<i class="glyphicon glyphicon-send"></i>
+                        Consultar
                       </button>
-                    </div>
+                      </div>
                   </div>
                 </form>
-              </div>
-            </div>
           </div>
           <br />
           <br />
@@ -201,7 +201,7 @@ class DASH extends React.Component {
                 href="http://desarrolladores.esri.co">GeoGeeks</a>.</p>
             </div>
           </footer>
-        </Container>
+        </div>
       </>
     );
   }

@@ -27,7 +27,7 @@
     width: 55%;
     justify-content: center;
   }
-  .input {
+  /* .input {
     font-size: 1em;
     color: #212121;
     margin: 6px 0 3px 0;
@@ -37,14 +37,14 @@
     background: white;
     outline: none;
     text-decoration: none;
-  }
+  } */
   .contentButtons {
     width: 100%;
     margin: 25px 0 0 0;
     display: flex;
     justify-content: space-around;
   }
-  .button{
+  /* .button{
     color: #cadde5;
     background-color: #1e4069;
     border: 1px solid #1e4069;
@@ -65,4 +65,4 @@
     cursor: pointer;
     background: rgb(202, 221, 229, 0.7);
     outline: none;
-  }
+  } */

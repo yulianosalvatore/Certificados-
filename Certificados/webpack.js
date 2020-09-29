@@ -13,11 +13,20 @@ const morgan = require('morgan') // solicitudes de registros
 
 
 // db Connection w/ localhost
+<<<<<<< HEAD
 const confi = ({
   host:`${config.POSTGRES.server }`,
   user:`${config.POSTGRES.user}`,
   password:`${config.POSTGRES.password}`,
   database:`${config.POSTGRES.database}`
+=======
+const config = ({
+  host:'localhost',
+  user:'postgres',
+  // password:'yuliano08',
+  password:'a12112001',
+  database:'mercadeonosa'
+>>>>>>> 27a5d20a2aec519888af65960b47a05f25d84495
 })
 const db = new Pool(confi);
 // Controllers - aka, las consultas a db 

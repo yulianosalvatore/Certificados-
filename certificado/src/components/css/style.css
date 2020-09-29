@@ -1,4 +1,21 @@
 
+@media only screen and (max-width: 766px) {
+	.form-group{
+		margin-left: 14%;
+		margin-right: 14%;
+	}
+	.lado{
+		margin-left: 6%;
+	}
+	.imprimirG{
+		margin-right: 3% !important; 
+	}
+}
+@media only screen and (max-width: 575px) {
+	.imprimirG{
+		margin-right: 20% !important; 
+	}
+}
 .swal-modal {
 	border: 3px solid #00BECB;;
   }
@@ -11,7 +28,7 @@
 	border-radius: 0px ;
 	/* margin-left: 100px; */
 	/* min-height: 30px; */
-	min-width: 100%;
+	width: 100%;
 	font-size: 1em;
     color: #212121;
     /* margin: 6px 0 3px 0; */
@@ -20,6 +37,27 @@
     outline: none;
 	text-decoration: none;
 	font-family: 'avenir-next-lt-pro';
+}
+.input{
+	z-index:5;
+	background: #efeff1;
+	border-radius: 0px ;
+	/* min-height: 30px; */
+	width: 100%;
+	font-size: 1em;
+    color: #212121;
+    /* margin: 6px 0 3px 0; */
+    /* border: 1px; */
+    /* padding: 10px 8px; */
+    outline: none;
+	text-decoration: none;
+	font-family: 'avenir-next-lt-pro';
+}
+.form-group{
+	margin-left: 14%;
+}
+.imprimirG{
+	margin-left: 26% !important; 
 }
 .left{
 	text-align-last: left;
@@ -36,15 +74,23 @@ body{
     background-size: cover;
 }
 
-.jumbotron{
+/* .jumbotron{
 	position: absolute;
-	background-image: url("../img/Banner1.png");
+	background-image: url("../img/Banner3.png");
 	background-size: cover;
 	background-repeat: no-repeat;
 	margin-top: -15px;
 	margin-left: -115px;
 	max-width: 98%;
-}
+} */
+/* .imagen{
+	width: 96%;
+	
+	height: 24%;
+	margin-left: 2%;
+	margin-right: 2%;
+	position: absolute;
+} */
 
 #content{
 	padding-bottom: 20px;
@@ -70,9 +116,17 @@ h2{
 	background-color: #0079c2;
 	color: antiquewhite;
 	font-family: 'avenir-next-lt-pro';
-	margin-left: 200px;
-	padding: 4px;
-	width: 300px;
+	margin-left: 22%;
+	/* padding: 4px; */
+	width: 40%;
+}
+.Imprimir{
+	background-color: #0079c2;
+	color: antiquewhite;
+	font-family: 'avenir-next-lt-pro';
+	margin-left: 3%;
+	/* padding: 4px; */
+	width: 30%;
 }
 
 .checkboxContainer .form-control-feedback{
@@ -97,11 +151,6 @@ h2{
 .from1{
 	margin-top: 150px;
 	padding-left: 160px;
-	font-family: 'avenir-next-lt-pro';
-}
-
-.titulo{
-	margin-left: -170px;
 	font-family: 'avenir-next-lt-pro';
 }
 .container{
