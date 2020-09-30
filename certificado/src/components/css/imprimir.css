@@ -13,13 +13,25 @@ body{
 
 .jumbotron{
 	position: absolute;
-	background-image: url("../img/Banner1.png");
+	background-image: url("../img/Banner3.png");
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	margin-right: 1%;
 	margin-left: 1%;
 	width: 98%;
 	height: 150px;
+}
+@media only screen and (max-width: 480px) {
+	.jumbotron{
+		position: absolute;
+		background-image: url("../img/Banner5.png");
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		margin-right: 1%;
+		margin-left: 1%;
+		width: 98%;
+		height: 150px;
+	}
 }
 
 #content{
