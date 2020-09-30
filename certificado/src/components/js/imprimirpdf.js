@@ -7,8 +7,15 @@ import { Container } from 'reactstrap';
 
 
 class Imprimir extends React.Component {
-    state = this.props.location.state.detail[0]
-    evento =this.props.location.state.evento
+    constructor(props) {
+        super(props);
+        try{
+            this.state = props.location.state.detail[0];
+            this.handleStatusChange = props.location.state.evento;
+        }catch(error){
+                this.props.history.push('/')
+        }
+      }
     nombreChange(value){
         
         var str = value; 
@@ -168,14 +175,14 @@ class Imprimir extends React.Component {
 
             </>
         )
-        }catch(error){
-            return(
-                <Container>
-                    {this.props.history.push('/')}
-                </Container>
-                
-            )
-        }
+    }catch(error){
+        return(
+            <Container>
+                {this.props.history.push('/')}
+            </Container>
+            
+        )
+    }
     }
 }
 export default Imprimir;
