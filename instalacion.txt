@@ -1,15 +1,10 @@
 Front (certificado):
   npm install
   npm i react react-router-dom sweetalert
-<<<<<<< HEAD
   npm install @react-pdf/renderer --save 
-=======
-  npm install @react-pdf/renderer --save
->>>>>>> 27a5d20a2aec519888af65960b47a05f25d84495
 En caso de error: 
   npm i react-scripts
 
 back (certificados):
   npm install
-  npm install assert
-  npm install dotenv
+  npm i express body-parser pg knex dotenv helmet cors morgan assert
