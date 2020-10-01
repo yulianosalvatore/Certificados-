@@ -83,7 +83,7 @@ class DASH extends React.Component {
           <br></br><br></br>
 
                 <div className="titulo text-center">
-                  <h2 >Eventos Esri Colombia</h2>
+                  <h2 className="avenir">Eventos Esri Colombia</h2>
                   <h3  >Generación de certificados</h3>
                 </div>
                 {/* Formulario de busqueda de registro por evento y correo */}

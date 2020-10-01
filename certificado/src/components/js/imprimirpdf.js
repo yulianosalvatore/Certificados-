@@ -11,7 +11,7 @@ class Imprimir extends React.Component {
         super(props);
         try{
             this.state = props.location.state.detail[0];
-            this.handleStatusChange = props.location.state.evento;
+            this.evento = props.location.state.evento;
         }catch(error){
                 this.props.history.push('/')
         }
