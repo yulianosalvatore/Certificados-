@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/generar.css';
-import pic from "../img/certCCU.png";
+import pic from "../img/Cue2020.PNG";
 import ReactDOM, { render } from "react-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Page, Text, View, Document, StyleSheet,Image, PDFViewer, PDFDownloadLink} from '@react-pdf/renderer';
@@ -54,24 +54,27 @@ class Generar extends React.Component {
     <Image src={pic} alt="images"  style={styles.pageBackground} />
     <Text >  </Text>
     <Text > </Text>
+    <Text >  </Text>
+    <Text >  </Text>
+    <Text >  </Text>
+    <Text >  </Text>
+    <Text >  </Text>
+    <Text >  </Text>
+    <Text >  </Text>
+    <Text style={{fontSize:"15"}}>Certifica que </Text>
+    
+    <Text >  </Text>
+  <Text  style={{fontSize:"24"}}>{nombre} {apellido}</Text>
     <Text > </Text>
-    <Text >  </Text>
-    <Text >  </Text>
-    <Text >  </Text>
-    <Text >  </Text>
-    <Text >  </Text>
-    <Text style={{fontSize:"11"}}>Certifica que </Text>
-  <Text  style={{fontSize:"35"}}>{nombre} {apellido}</Text>
-  <Text style={{fontSize:"13"}}>{id} </Text>
     <Text > </Text>
-    <Text > </Text>
-    <Text style={{fontSize:"11"}}>Asistio a </Text>
-    <Text  style={{fontSize:"25"}}>{evento} </Text>
+    <Text style={{fontSize:"12"}}>Asistio a </Text>
+    <Text  style={{fontSize:"17"}}>{evento} </Text>
+    <Text  style={{fontSize:"10"}}>Ciudad Hora </Text>
     <Text>  </Text>
-                        <Image src={firma} style={styles.view} alt="images" />
+                        {/* <Image src={firma} style={styles.view} alt="images" />
                         
     <Text style={{fontSize:"12"}}>Helena Gutiérres  </Text>
-    <Text style={{fontSize:"12"}}>Presidente  </Text>
+    <Text style={{fontSize:"12"}}>Presidente  </Text> */}
     </Page>
   </Document>
     );
