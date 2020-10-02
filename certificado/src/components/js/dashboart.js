@@ -155,6 +155,12 @@ class DASH extends React.Component {
                           <option value="EventoCucuta, Evento Cucuta 2019">
                             Evento Cucuta 2019
                           </option>
+                          <option value="CUE2020, Conferencia Virtual de Usuarion Esri 2020 ">
+                          Conferencia Virtual de Usuarion Esri 2020
+                          </option>
+                          <option value="EventoCucuta, Evento Cucuta 2019">
+                            Evento Cucuta 2019
+                          </option>
                         </select>
                       </div>
                     </div>

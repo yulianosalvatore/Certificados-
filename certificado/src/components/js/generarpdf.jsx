@@ -71,10 +71,10 @@ class Generar extends React.Component {
     <Text  style={{fontSize:"17"}}>{evento} </Text>
     <Text  style={{fontSize:"10"}}>Ciudad Hora </Text>
     <Text>  </Text>
-                        {/* <Image src={firma} style={styles.view} alt="images" />
+                        {/* <Image src={firma} style={styles.view} alt="images" /> */}
                         
     <Text style={{fontSize:"12"}}>Helena Gutiérres  </Text>
-    <Text style={{fontSize:"12"}}>Presidente  </Text> */}
+    <Text style={{fontSize:"12"}}>Presidente  </Text>
     </Page>
   </Document>
     );
