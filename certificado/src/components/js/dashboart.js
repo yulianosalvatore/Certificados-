@@ -83,7 +83,7 @@ class DASH extends React.Component {
           <br></br><br></br>
 
                 <div className="titulo text-center">
-                  <h2 >Eventos Esri Colombia</h2>
+                  <h2 className="avenir">Eventos Esri Colombia</h2>
                   <h3  >Generación de certificados</h3>
                 </div>
                 {/* Formulario de busqueda de registro por evento y correo */}
@@ -135,32 +135,16 @@ class DASH extends React.Component {
                           required
                         >
                           <option value="">Seleccione el evento</option>
-                          <option value="WebinarMineria2020, Webinar Cómo habilitar la eficiencia operacional en procesos mineros con ArcGIS">
-                            Webinar Cómo habilitar la eficiencia operacional en procesos mineros con ArcGIS
+                          <option value="CUE2020,Conferencia Virtual de Usuarios Esri 2020">
+                            Conferencia Virtual de Usuarios Esri 2020
                           </option>
-                          <option value="WebinarCovid2020, Webinar Solución de continuidad del negocio durante  el COVID-19">
-                            Webinar Solución de continuidad del negocio durante
-                            el COVID-19{" "}
+                          <option value="CUE2020Mapas,CUE2020Mapas">
+                            Galeria de mapas conferencia virtual de usuarios Esri 2020
                           </option>
-                          <option value="CCU2019, CCU 2019">CCU 2019</option>
-                          <option value="CRU2018, CRU 2018">CRU 2018</option>
-                          <option value="CCU2018_Asistentes, CCU 2018">CCU 2018</option>
-                          <option value="CRU2019Buc,  CRU 2019 Bucaramanga">
-                            CRU 2019 Bucaramanga
-                          </option>
-                          <option value="CRU2019Cali, CRU 2019 Cali">CRU 2019 Cali</option>
-                          <option value="CRU2019Barr, CRU 2019 Barranquilla">
-                            CRU 2019 Barranquilla
-                          </option>
-                          <option value="EventoCucuta, Evento Cucuta 2019">
+                          <option value="EventoCucuta,Evento Cucuta 2019">
                             Evento Cucuta 2019
                           </option>
-                          <option value="CUE2020, Conferencia Virtual de Usuarion Esri 2020 ">
-                          Conferencia Virtual de Usuarion Esri 2020
-                          </option>
-                          <option value="EventoCucuta, Evento Cucuta 2019">
-                            Evento Cucuta 2019
-                          </option>
+                         
                         </select>
                       </div>
                     </div>

@@ -12,10 +12,12 @@ class Generar extends React.Component {
   componentDidMount(){
     try{
       const items = this.props.location.state.detail
-  const evento = this.props.location.state.evento
+  var evento = this.props.location.state.evento
   const id =items.id
   const nombre = items.nombre;
   const apellido = items.apellido;
+  var imagen = []
+  var asistencia = ""
   // Create styles
   const styles = StyleSheet.create({
     Text: {
@@ -47,11 +49,23 @@ class Generar extends React.Component {
       width: '100%',
     },
   });
-  
+  if(evento == "Conferencia Virtual de Usuarios Esri 2020"){
+    imagen=pic
+    asistencia = "Asistio a"
+  }
+  if(evento == "CUE2020Mapas"){
+    asistencia = "En el marco de la Conferencia de Usuarios Esri 2020, participó en la Galería de mapas con el mapa:"
+    evento = items.mapa
+    imagen=pic
+  }
+  if(evento == "Evento Cucuta 2019"){
+    imagen=pic
+    asistencia = "Asistio a"
+  }
   const MyDocument = () => (
     <Document title="Certificado" author="Esri">
     <Page size="B5" style={styles.page} orientation="landscape" wrap>
-    <Image src={pic} alt="images"  style={styles.pageBackground} />
+    <Image src={imagen} alt="images"  style={styles.pageBackground} />
     <Text >  </Text>
     <Text > </Text>
     <Text >  </Text>
@@ -64,15 +78,18 @@ class Generar extends React.Component {
     <Text style={{fontSize:"15"}}>Certifica que </Text>
     
     <Text >  </Text>
-  <Text  style={{fontSize:"24"}}>{nombre} {apellido}</Text>
+  <Text  style={{fontSize:"24"}}>{ nombre}{apellido}</Text>
     <Text > </Text>
     <Text > </Text>
-    <Text style={{fontSize:"12"}}>Asistio a </Text>
+    <Text style={{fontSize:"12"}}>{asistencia}</Text>
     <Text  style={{fontSize:"17"}}>{evento} </Text>
-    <Text  style={{fontSize:"10"}}>Ciudad Hora </Text>
+    <Text  style={{fontSize:"10"}}>BOGOTA  OCTUBRE 2020 </Text>
     <Text>  </Text>
                         {/* <Image src={firma} style={styles.view} alt="images" /> */}
-                        
+     
+    <Text >  </Text>
+    <Text >  </Text>
+    <Text >  </Text>               
     <Text style={{fontSize:"12"}}>Helena Gutiérres  </Text>
     <Text style={{fontSize:"12"}}>Presidente  </Text>
     </Page>
