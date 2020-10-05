@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/generar.css';
-import pic from "../img/Cue2020.png";
+import pic from "../img/Cue2020.PNG";
 import cuemap  from "../img/Cuemap2020.png"
 import avenir from '../css/Metropolis/Metropolis-Medium.otf';
 import avenirbolb from '../css/Metropolis/Metropolis-Black.otf';
@@ -93,12 +93,12 @@ class Generar extends React.Component {
     <Text style={{fontSize:"10"}}> </Text>
     <Text  style={{fontSize:"17",fontFamily:"avenir-blod2"}}>{evento} </Text>
     <Text style={{fontSize:"10"}}> </Text>
-    <Text  style={{fontSize:"10",fontFamily:"avenir"}}>BOGOTA  OCTUBRE 25 de 2020 </Text>
+    <Text  style={{fontSize:"10",fontFamily:"avenir"}}>BOGOTÁ  OCTUBRE 25 de 2020 </Text>
     <Text>  </Text>
     <Text >  </Text>
                         <Image src={firma} style={styles.view} alt="images" />
      
-    <Text >  </Text>               
+    <Text style={{fontSize:"10"}}>  </Text>               
     <Text style={{fontSize:"12",fontFamily:"avenir"}}>Helena Gutiérres  </Text>
     <Text style={{fontSize:"12",fontFamily:"avenir"}}>Presidente  </Text>
     </Page>
