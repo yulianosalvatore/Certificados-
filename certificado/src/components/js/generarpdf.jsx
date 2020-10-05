@@ -1,16 +1,20 @@
 import React from 'react';
 import '../css/generar.css';
+import avenir from '../css/Metropolis/Metropolis-Medium.otf';
+import avenirbolb from '../css/Metropolis/Metropolis-Black.otf'
 import pic from "../img/Cue2020.PNG";
 import ReactDOM, { render } from "react-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Page, Text, View, Document, StyleSheet,Image, PDFViewer, PDFDownloadLink} from '@react-pdf/renderer';
+import { Page, Text, View, Document, StyleSheet,Image, PDFViewer, PDFDownloadLink, Font} from '@react-pdf/renderer';
 import firma from "../img/firmaHelena.png"
-
+Font.register({ family: 'avenir', src: avenir, fontWeight: 1000});
+Font.register({ family: 'avenir-blod', src: 'https://cdn.jsdelivr.net/npm/open-sans-all@0.1.3/fonts/open-sans-600.ttf', fontWeight: 1000});
+Font.register({ family: 'avenir-blod2', src: 'https://cdn.jsdelivr.net/npm/open-sans-all@0.1.3/fonts/open-sans-600.ttf', fontWeight: 600});
 class Generar extends React.Component {
   
   
   componentDidMount(){
-    try{
+    // try{
       const items = this.props.location.state.detail
   var evento = this.props.location.state.evento
   const id =items.id
@@ -18,21 +22,23 @@ class Generar extends React.Component {
   const apellido = items.apellido;
   var imagen = []
   var asistencia = ""
+  var certifica=""
+  
   // Create styles
   const styles = StyleSheet.create({
     Text: {
-      fontFamily: 'AvenirCondensedHand'
+      // fontFamily: 'avenir-pro'
     },
     page: {
       alignItems: 'center',
-      Fontfamily: 'AvenirCondensedHand'
+      // Fontfamily: 'avenir-pro'
     },
     section: {
       width: 200,
       '@media max-width: 400': {
         width: 300,
       },
-      '@media orientation: landscape': {
+      '@media orientation: landscape': { 
         width: 400,
       },
     },
@@ -52,15 +58,18 @@ class Generar extends React.Component {
   if(evento == "Conferencia Virtual de Usuarios Esri 2020"){
     imagen=pic
     asistencia = "Asistio a"
+    certifica='Certifican que:'
   }
   if(evento == "CUE2020Mapas"){
     asistencia = "En el marco de la Conferencia de Usuarios Esri 2020, participó en la Galería de mapas con el mapa:"
     evento = items.mapa
     imagen=pic
+    certifica="Certifican que:"
   }
   if(evento == "Evento Cucuta 2019"){
     imagen=pic
     asistencia = "Asistio a"
+    certifica="Certifica que:"
   }
   const MyDocument = () => (
     <Document title="Certificado" author="Esri">
@@ -74,24 +83,24 @@ class Generar extends React.Component {
     <Text >  </Text>
     <Text >  </Text>
     <Text >  </Text>
+    <Text style={{fontSize:"10"}}>  </Text>
+  <Text style={{fontSize:"10",fontFamily:"avenir",fontWeight: '1000'}}>{certifica}</Text>
     <Text >  </Text>
-    <Text style={{fontSize:"15"}}>Certifica que </Text>
-    
-    <Text >  </Text>
-  <Text  style={{fontSize:"24"}}>{ nombre}{apellido}</Text>
+  <Text style={{fontSize:"34",fontFamily:"avenir-blod"}}>{nombre} {apellido}</Text>
     <Text > </Text>
-    <Text > </Text>
-    <Text style={{fontSize:"12"}}>{asistencia}</Text>
-    <Text  style={{fontSize:"17"}}>{evento} </Text>
-    <Text  style={{fontSize:"10"}}>BOGOTA  OCTUBRE 2020 </Text>
+    <Text style={{fontSize:"10",fontFamily:"avenir"}}>{asistencia}</Text>
+    <Text style={{fontSize:"10"}}> </Text>
+    <Text  style={{fontSize:"17",fontFamily:"avenir-blod2"}}>{evento} </Text>
+    <Text style={{fontSize:"10"}}> </Text>
+    <Text  style={{fontSize:"10",fontFamily:"avenir"}}>BOGOTA  OCTUBRE 2020 </Text>
     <Text>  </Text>
                         {/* <Image src={firma} style={styles.view} alt="images" /> */}
      
     <Text >  </Text>
     <Text >  </Text>
     <Text >  </Text>               
-    <Text style={{fontSize:"12"}}>Helena Gutiérres  </Text>
-    <Text style={{fontSize:"12"}}>Presidente  </Text>
+    <Text style={{fontSize:"12",fontFamily:"avenir"}}>Helena Gutiérres  </Text>
+    <Text style={{fontSize:"12",fontFamily:"avenir"}}>Presidente  </Text>
     </Page>
   </Document>
     );
@@ -110,10 +119,10 @@ class Generar extends React.Component {
     ReactDOM.render( <App2></App2>, document.getElementById("descargar"));
     
     
-     } catch{
-            this.props.history.push('/')
+    //  } catch{
+    //         this.props.history.push('/')
         
-    }
+    // }
   }
   obtenerurl(){
     alert(document.getElementsByTagName("a")[0].getAttribute("href"))
