@@ -1,8 +1,9 @@
 import React from 'react';
 import '../css/generar.css';
+import pic from "../img/Cue2020.png";
+import cuemap  from "../img/Cuemap2020.png"
 import avenir from '../css/Metropolis/Metropolis-Medium.otf';
-import avenirbolb from '../css/Metropolis/Metropolis-Black.otf'
-import pic from "../img/Cue2020.PNG";
+import avenirbolb from '../css/Metropolis/Metropolis-Black.otf';
 import ReactDOM, { render } from "react-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Page, Text, View, Document, StyleSheet,Image, PDFViewer, PDFDownloadLink, Font} from '@react-pdf/renderer';
@@ -63,7 +64,7 @@ class Generar extends React.Component {
   if(evento == "CUE2020Mapas"){
     asistencia = "En el marco de la Conferencia de Usuarios Esri 2020, participó en la Galería de mapas con el mapa:"
     evento = items.mapa
-    imagen=pic
+    imagen=cuemap
     certifica="Certifican que:"
   }
   if(evento == "Evento Cucuta 2019"){
@@ -88,16 +89,15 @@ class Generar extends React.Component {
     <Text >  </Text>
   <Text style={{fontSize:"34",fontFamily:"avenir-blod"}}>{nombre} {apellido}</Text>
     <Text > </Text>
-    <Text style={{fontSize:"10",fontFamily:"avenir"}}>{asistencia}</Text>
+    <Text style={{fontSize:"12",fontFamily:"avenir"}}>{asistencia}</Text>
     <Text style={{fontSize:"10"}}> </Text>
     <Text  style={{fontSize:"17",fontFamily:"avenir-blod2"}}>{evento} </Text>
     <Text style={{fontSize:"10"}}> </Text>
-    <Text  style={{fontSize:"10",fontFamily:"avenir"}}>BOGOTA  OCTUBRE 2020 </Text>
+    <Text  style={{fontSize:"10",fontFamily:"avenir"}}>BOGOTA  OCTUBRE 25 de 2020 </Text>
     <Text>  </Text>
-                        {/* <Image src={firma} style={styles.view} alt="images" /> */}
+    <Text >  </Text>
+                        <Image src={firma} style={styles.view} alt="images" />
      
-    <Text >  </Text>
-    <Text >  </Text>
     <Text >  </Text>               
     <Text style={{fontSize:"12",fontFamily:"avenir"}}>Helena Gutiérres  </Text>
     <Text style={{fontSize:"12",fontFamily:"avenir"}}>Presidente  </Text>
