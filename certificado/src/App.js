@@ -14,7 +14,6 @@ function App() {
         <Route path="/" exact component={DASH} />
         <Route path="/generarpdf" exact component={Generar} />
         <Route path="/imprimir" exact component={Imprimir} />
-
       </Switch>
     </Router>
   );

@@ -1,7 +1,7 @@
 
 //traemos los datos de la tabla 
 const getUsers = async (req, res,db)=>{
-   db.query('select * from semillero."EventoCucuta"')
+   db.query('select * from semillero."Mapas"')
    .then((response)=>{
     if (response.rows.length) {
       res.json(response.rows);
@@ -20,7 +20,21 @@ const getData = (req, res, db) => {
   // cursos ="EventoCucuta";
   cursos = evento;
   value = [email];
-  db.query('select * from "Certificados"."'+cursos+'" where email = $1 and asistencia= '+"'si'", value, )
+  db.query('select * from "semillero"."'+cursos+'" where email = $1 and asistencia= '+"'si'", value)
+    .then((items) => {
+      if (items.rows.length) {
+        res.json(items.rows);
+      } else {
+        res.json({ dataExists: "false" });
+      }
+    })
+    .catch((err) => res.status(400).json({ dbError: "db error" }));
+};
+const getMap = (req, res, db) => {
+  const { email } = req.body;
+  // cursos ="EventoCucuta";
+  value = [email];
+  db.query('select * from semillero."Mapas" where "correoUs" = $1', value)
     .then((items) => {
       if (items.rows.length) {
         res.json(items.rows);
@@ -86,5 +100,6 @@ module.exports = {
     createUser,
     updateUser,
     deleteUser,
-    getData
+    getData,
+    getMap
 }

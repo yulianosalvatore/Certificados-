@@ -8,14 +8,6 @@ class DASH extends React.Component {
   state = {
     res: []
   }
-  // handlechange = e => {
-  //     this.setState({
-  //         from: {
-  //             ...this.state.from,
-  //             [e.target.name]: e.target.value,
-  //         }
-  //     })
-  // }
   Email = React.createRef();
   Evento = React.createRef();
   handle = (e) => {
@@ -25,7 +17,6 @@ class DASH extends React.Component {
     const split = evento.split(",");
     const evento1 =  split[0];
     const evento2= split[1];
-    // alert(this.Email.current.value)
 
     var raw = JSON.stringify({ email: email, evento: evento1 });
 
@@ -39,9 +30,6 @@ class DASH extends React.Component {
       .then((response) => response.json())
       .then((res) => {
         if (res[0]) {
-          // this.setState({res})
-          // alert(this.state.res)
-          // this.props.history.push('/imprimir');
           this.props.history.push({
             pathname: '/imprimir',
             state: { detail: res, evento: evento2 }
@@ -64,17 +52,7 @@ class DASH extends React.Component {
       <>
         <div>
           <br />
-          {/*  
-                     <div className="load">
-                        <div className="image-load">
-                            <img src="ajax-loader.gif" />
-                        </div>
-                    </div> */}
-
           <div className="jumbotron">
-            {/* <img src="../img/banner.png" style="width: 100%;" className="img-responsive hidden-xs"></img>
-                         <img src="../img/bannermobile.png" class="img-responsive visible-xs-block" width="100%" height="auto" alt="Banner Registro"></img>
-                     */}
           </div>
           <br></br>
           <div >
@@ -138,9 +116,9 @@ class DASH extends React.Component {
                           <option value="CUE2020,Conferencia Virtual de Usuarios Esri 2020">
                             Conferencia Virtual de Usuarios Esri 2020
                           </option>
-                          {/* <option value="CUE2020Mapas,CUE2020Mapas">
+                          <option value="CUE2020Mapas,CUE2020Mapas">
                             Galeria de mapas conferencia virtual de usuarios Esri 2020
-                          </option> */}
+                          </option>
                          
                         </select>
                       </div>

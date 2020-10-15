@@ -3,7 +3,7 @@ import '../css/imprimir.css';
 import sweet from "sweetalert"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'reactstrap';
-
+import ReactDOM, { render } from "react-dom";
 
 
 class Imprimir extends React.Component {
@@ -16,6 +16,50 @@ class Imprimir extends React.Component {
                 this.props.history.push('/')
         }
       }
+      componentDidMount(){
+        var raw = JSON.stringify({ email: this.state.email});
+    fetch("http://localhost:4000/Mapa", {
+      method: "post",
+      body: raw,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((res) => {
+        if (res[0]) {
+            // this.props.document.getElementById("Mapa").appendChild(<option>{res[0].Nombre}</option>)
+            // res.map(mapa=>(ReactDOM.render( <option>{mapa.Nombre}</option>, document.getElementById("Mapa"))))
+            ReactDOM.render(
+                <div>
+                <label className="control-label col-sm-2" for="Evento">
+                      Nombre del mapa*
+                    </label>
+                    <div className="col-md-8 inputGroupContainer">
+                      <div className="input-group">
+                        <div class="input-group">
+                        <select
+                          ref={this.Mapa}
+                          name="Mapa"
+                          id="Mapa"
+                          className="input form-control"
+                          aria-describedby="basic-addon1"
+                          required
+                        >
+                            {res.map(mapa=>(<option>{mapa.Nombre}</option>))}
+                        </select>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+            ,document.getElementById("seleccionar")
+            )
+        } else {
+        }
+      })
+      .catch((err) => console.log(err));
+    }
+    
     nombreChange(value){
         
         var str = value; 
@@ -59,25 +103,31 @@ class Imprimir extends React.Component {
         apellido = React.createRef();
         Cedula = React.createRef();
         empresa = React.createRef();
+        Mapa = React.createRef();
     handle = (e) => {
         e.preventDefault();
+        try{
         this.props.history.push({
             pathname: '/generarpdf',
-            state: { detail: this.state, evento:this.evento}
-          })
+            state: { detail: this.state, evento:this.evento, mapa:this.Mapa.current.value}
+          })}
+          catch{
+            this.props.history.push({
+                pathname: '/generarpdf',
+                state: { detail: this.state, evento:this.evento}
+              })
+          }
         // var win = window.open('/generarpdf/'+this.state, '_blank');
 //   win.focus();
       };
     render() {
-        
         document.getElementsByTagName("body")[0].style.overflowY="visible"
-        try{
+        // try{
         const items = this.props.location.state.detail
         
         return (
             <>
                 <div> 
-
                     <br />
 
                     <div className="jumbotron">
@@ -91,7 +141,9 @@ class Imprimir extends React.Component {
                             {/* formulario a editar para completar datos y poder imprimir */}
                                 <form onSubmit={this.handle} action=""
                                     method="post" enctype="url-encoded" autocomplete="on">
-
+                                        <div id="seleccionar" className="form-group imprimirG">
+                    
+                  </div>
                                     <div className="form-group imprimirG">
                                         <label className="control-label col-sm-2"  for="Nombres">Nombres*</label>
                                         <div className="col-sm-8 inputGroupContainer">
@@ -175,14 +227,14 @@ class Imprimir extends React.Component {
 
             </>
         )
-    }catch(error){
-        return(
-            <Container>
-                {this.props.history.push('/')}
-            </Container>
+    // }catch(error){
+    //     return(
+    //         <Container>
+    //             {this.props.history.push('/')}
+    //         </Container>
             
-        )
-    }
+    //     )
+    // }
     }
 }
 export default Imprimir;

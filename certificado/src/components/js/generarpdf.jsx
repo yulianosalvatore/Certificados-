@@ -63,7 +63,7 @@ class Generar extends React.Component {
   }
   if(evento == "CUE2020Mapas"){
     asistencia = "En el marco de la Conferencia de Usuarios Esri 2020, participó en la Galería de mapas con el mapa:"
-    evento = items.mapa
+    evento = this.props.location.state.mapa
     imagen=cuemap
     certifica="Certifican que:"
   }
